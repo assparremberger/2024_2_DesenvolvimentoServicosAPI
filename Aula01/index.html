@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula01 - DSAPI</title>
+</head>
+<body>
+    <div id="minhaDiv"> 
+        Oi
+    </div>
+    <button onclick="alterar()">Alterar</button>
+    <script>
+        var mDiv = document.getElementById("minhaDiv");
+        var conteudo = mDiv.innerHTML + " galerinha! <hr>";
+        mDiv.innerHTML = conteudo;
+        function alterar(){
+            mDiv.style.backgroundColor = "#f00";
+            mDiv.style.width = "50%";
+            mDiv.setAttribute( "align" , "center");
+        }
+    </script>
+
+    <hr>
+
+    <input type="text" id="txtNome" /> 
+    <button onclick="salvar()">Adicionar</button> <br>
+    <ol id="lista">
+
+    </ol>
+
+    <script>
+        txtNome = document.getElementById("txtNome");
+        lista = document.getElementById("lista");
+        function salvar(){
+            lista.innerHTML += "<li>"+ txtNome.value + "</li>";
+        }
+    </script>
+    
+</body>
+</html>
