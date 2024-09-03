@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula02 - JS e jQuery</title>
     <script src="script.js" defer></script>
+    <script src="jquery-3.7.1.min.js" ></script>
 </head>
 <body>
     <script>
@@ -40,6 +41,38 @@
  </ul>
  <p id="pSoma"></p>
 
+ <hr>
+ Aula04 - 03/09/2024
+<br><br>
+ <script>
+    pessoa = {
+        nome : "Maria" ,
+        idade : 25 ,
+        altura : 1.73 ,
+        end : null ,
+        getDados : function(){
+            dias = this.idade * 365;
+            txt = "Nome: " + this.nome + "<br>";
+            txt +="Idade: " + this.idade + "<br>";
+            txt +="Altura: " + this.altura + "<br>";
+            txt +="Endereço: " + this.end + "<br>";
+            txt +="Dias vividos: " + dias + "<br>";
+            return txt;
+        }
+    }
+    pessoa.nome += " da Silva";
+    pessoa.idade = 30;
+    document.write( "<b>Dados da pessoa " + pessoa.nome + ": </b><br>" );
+    document.write( pessoa.getDados() );
+ </script>
+
+
+<hr>
+
+<div id="minhaDiv">
+    
+</div>
+<button id="btnAlterar">Alterar Div</button>
 
 
     

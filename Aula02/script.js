@@ -29,7 +29,40 @@ function somar(){
         soma += parseInt(valor);
         lista.innerHTML += "<li>" + valor + "</li>";
         pSoma.innerHTML = "Soma: " + soma;
-        
     }
     txtValor.value = "";
 }
+
+
+
+
+// 03/09/2023
+
+//rgb(255, 0, 0)
+//#f00
+//#ff0000
+
+
+$("#minhaDiv").css("width" , "300px");
+$("#minhaDiv").css("height" , "200px");
+$("#minhaDiv").css("background-color" , "#f0f");
+$("#minhaDiv").css("color" , "#fff");
+$("#minhaDiv").css("padding" , "10px");
+//$("#minhaDiv").html("<u> Olá </u>");
+$("#minhaDiv").text("<u> Olá </u>");
+//$("#minhaDiv").hide(3000);
+$("#minhaDiv").fadeOut(3000);
+
+$("#btnAlterar").click( function(){
+    //$("#minhaDiv").show();
+    //$("#minhaDiv").toggle(1000);
+    //$("#minhaDiv").fadeIn(1000);
+    $("#minhaDiv").fadeToggle(5000 , function(){
+        alert("Execução concluída!");
+    } );
+});
+
+
+
+
+
