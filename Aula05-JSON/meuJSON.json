@@ -1,0 +1,14 @@
+{
+    "nome" : "Maria" ,
+    "idade" : 25 ,
+    "altura" : 1.75 ,
+    "endereco" : null ,
+    "temFilhos" : true ,
+    "formacoes" : [ "Técnico em Informática", "ADS" ] ,
+    "anoDeFormacao" : [ 2020 , 2023 ] ,
+    "conjuge" : { "nome" : "João" , "idade" : 25 } ,
+    "filhos" : [
+        { "nome" : "Júlia" , "idade" : 7 } , 
+        { "nome" : "Pedro" , "idade" : 5 }
+    ]
+}
