@@ -6,20 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula05 - JSON</title>
 </head>
-<body>
+<body onload="buscarProdutos()">
     
     <button onclick="lerJSON()">Ler JSON</button>
     <div id="divJson"></div>
 
     <hr>
 
-    <button onclick="buscarProdutos()">Buscar Produtos</button>
-    <table id="tblProdutos">
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Preço</th>
-        </tr>
+    <input type="text" id="txtNome" placeholder="Digite o nome do produto: " /> 
+    <br>
+    <input type="text" id="txtPreco" placeholder="Preço do produto: " /> 
+    <br>
+
+    <button onclick="cadastrar()">Cadastrar</button>
+    
+    <hr>
+
+    <button onclick="buscarProdutos()">Buscar Produtos</button> <br>
+    <table id="tblProdutos" border="1">
+       
     </table>
 
 
