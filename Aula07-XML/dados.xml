@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<lista_produtos>
+    <produto>
+        <id>1</id>
+        <nome>Coca-cola</nome>
+        <preco>5.99</preco>
+    </produto>
+    <produto>
+        <id>2</id>
+        <nome>Pepsi</nome>
+        <preco>6.99</preco>
+    </produto>
+    <produto>
+        <id>3</id>
+        <nome>Trakinas</nome>
+        <preco>3.99</preco>
+        <qtd>100</qtd>
+    </produto>
+</lista_produtos>

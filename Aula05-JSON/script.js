@@ -1,3 +1,6 @@
+editando = false;
+codProduto = 0;
+
 function lerJSON(){
     requisicao = new XMLHttpRequest();
     requisicao.onreadystatechange = function(){
@@ -39,6 +42,7 @@ function buscarProdutos(){
                        "     <th>Nome</th> " +
                        "     <th>Preço</th> " +
                        "     <th>Excluir</th> " +
+                       "     <th>Editar</th> " +
                        " </tr> ";
             objJSON = JSON.parse( this.responseText);
             if( objJSON.resposta ){
@@ -50,6 +54,9 @@ function buscarProdutos(){
                     conteudo += "   <td>" + prod.nome + "</td>";
                     conteudo += "   <td>" + prod.preco + "</td>";
                     conteudo += "   <td><button onclick='excluir("+ prod.id +")' > X </button></td>";
+                    conteudo += "   <td><button onclick='carregarForm("+ prod.id ;
+                    conteudo +=  ", \""+prod.nome+"\" , " + prod.preco + " )' >" ;
+                    conteudo +=  "Editar</button></td>";
                     conteudo += "</tr>";
                 });
                 document.getElementById("tblProdutos").innerHTML = conteudo;
@@ -59,6 +66,15 @@ function buscarProdutos(){
 
     req.open("GET", "servidor.php?buscar", true);
     req.send();
+}
+
+
+function carregarForm( id, nome, preco){
+    editando = true;
+    codProduto = id;
+    document.getElementById("txtNome").value = nome;
+    document.getElementById("txtPreco").value = preco;
+    document.getElementById("btnSalvar").innerHTML = "Editar";
 }
 
 function cadastrar(){
@@ -73,7 +89,16 @@ function cadastrar(){
     nome = document.getElementById("txtNome").value;
     preco = document.getElementById("txtPreco").value;
     preco = preco.replace("," , ".");
-    req.open("POST", "servidor.php?inserir", true);
+
+    if( editando ){
+        req.open("POST", "servidor.php?editar&id="+codProduto, true);
+        document.getElementById("btnSalvar").innerHTML = "Cadastrar";
+        editando = false;
+        codProduto = 0;
+    }else{
+        req.open("POST", "servidor.php?inserir", true);
+    }
+    
     req.setRequestHeader("Content-type" , 
                     "application/x-www-form-urlencoded" );
     req.send( "nome=" + nome +"&preco=" + preco);
