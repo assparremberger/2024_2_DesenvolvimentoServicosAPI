@@ -38,7 +38,7 @@ const server = http.createServer( (req, res) =>{
             }
         })  
     } catch (error) {
-        res.end('{ "resposta" : "'+ error.toString()+'" }')
+        res.end('{ "resposta" : "'+ error +'" }')
     }
     
 })
